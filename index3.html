@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Компьютеры</title>
+    <style>
+        /* Стиль для модального окна и таблицы.  Здесь нужно добавить свой собственный CSS */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 30%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        .btn{
+            height:30px ;
+            border-radius:5px ;
+            background-color: rgb(242, 255, 0);
+        }
+        .btn2{
+            height:30px ;
+            border-radius:5px ;
+            background-color: rgb(43, 0, 255);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button  onclick="aaa()"  id="shopNow" class="btn">Əsas sahifə</button>
+        <button  id="openModal" class="btn2">Yeni komputer</button>
+
+        <table id="computers-table">
+            <thead>
+                <tr>
+                    <th>Ad</th>
+                    <th>Model adları</th>
+                    <th>Şəkil</th>
+                    <th>Qiymət</th>
+                    <th>Əmaliyyatlar</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <label for="computerName">Названия мадели</label><br>
+                <input type="text" id="computerName"><br>
+                <label for="computerId">Имя компьютера:</label><br>
+                <input type="text" id="computerId"><br>
+                <label for="computerImage">Картинка (URL):</label><br>
+                <input type="text" id="computerImage"><br>
+                <label for="computerPrice">Цена:</label><br>
+                <input type="number" id="computerPrice"><br>
+                <input type="text" id="computerNam" placeholder="Название компьютера">
+                <button id="addComputer">Добавить</button>
+                <button id="addCompute">Добавить</button>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("myModal");
+        const btn = document.getElementById("openModal");
+        const span = document.getElementById("closeModal");
+        const addComputerButton = document.getElementById("addComputer");
+        const computersTable = document.getElementById("computers-table").querySelector("tbody");
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        addComputerButton.onclick = function() {
+            const computerName = document.getElementById("computerName").value;
+            const computerId = document.getElementById("computerId").value;
+            const computerImage = document.getElementById("computerImage").value;
+            const computerPrice = document.getElementById("computerPrice").value;
+
+            // Проверка на пустые поля (можно добавить более строгую валидацию)
+            if (!computerName || !computerId || !computerImage || !computerPrice) {
+                alert("Заполните все поля!");
+                return;
+            }
+
+            let computers = JSON.parse(localStorage.getItem("computers")) || [];
+            computers.push({id: computerId, name: computerName, image: computerImage, price: computerPrice});
+            localStorage.setItem("computers", JSON.stringify(computers));
+            updateTable();
+            modal.style.display = "none";
+        }
+
+
+        function updateTable() {
+            let computers = JSON.parse(localStorage.getItem("computers")) || [];
+            computersTable.innerHTML = ''; // Очищаем таблицу перед обновлением
+
+            computers.forEach(computer => {
+                let row = computersTable.insertRow();
+                let idCell = row.insertCell();
+                let nameCell = row.insertCell();
+                let imageCell = row.insertCell();
+                let priceCell = row.insertCell();
+                let actionsCell = row.insertCell();
+
+                idCell.textContent = computer.id;
+                nameCell.textContent = computer.name;
+                imageCell.innerHTML = `<img src="${computer.image}" alt="${computer.name}" width="50">`; //добавлено отображение картинки
+                priceCell.textContent = computer.price;
+                actionsCell.innerHTML = `<button onclick="ccc()">Удалить</button>`; // можно добавить функционал удаления
+            });
+        }
+        updateTable(); // Загрузка данных при загрузке страницы
+
+
+function ccc() {
+    
+    localStorage.removeItem('computers');
+    
+}
+function aaa() {
+            window.location.href = "dsdw.html";
+}
+
+
+document.getElementById('addCompute').onclick = function() {
+    const computerName = document.getElementById('computerName').value;
+    if (computerName) {
+        let computers = JSON.parse(localStorage.getItem('computers')) || [];
+        computers.push(computerName);
+        localStorage.setItem('computers', JSON.stringify(computers));
+        document.getElementById('modal').style.display = "none";
+        document.getElementById('computerName').value = '';
+    }
+}
+
+       
+    </script>
+
+</body>
+</html>

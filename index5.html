@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кнопки и Divы</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="showDivs(1)">Кнопка 1</button>
+    <button onclick="showDivs(2)">Кнопка 2</button>
+    <button onclick="showDivs(3)">Кнопка 3</button>
+
+    <div id="div1" class="hidden">Содержимое Div 1</div>
+    <div id="div2" class="hidden">Содержимое Div 2</div>
+    <div id="div3" class="hidden">Содержимое Div 3</div>
+
+    <script>
+        function showDivs(buttonNumber) {
+            // Скрываем все div
+            document.getElementById('div1').classList.add('hidden');
+            document.getElementById('div2').classList.add('hidden');
+            document.getElementById('div3').classList.add('hidden');
+
+            // Показываем соответствующий div
+            document.getElementById('div' + buttonNumber).classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>

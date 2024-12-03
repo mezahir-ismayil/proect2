@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добро пожаловать</title>
+</head>
+<body>
+    <h1>Добро пожаловать!</h1>
+    <p id="greeting"></p>
+
+    <script>
+        // Получаем имя пользователя из localStorage
+        const username = localStorage.getItem('usernam');
+        // Отображаем приветствие
+        document.getElementById('greeting').textContent = `Привет, ${username}!`;
+    </script>
+</body>
+</html>

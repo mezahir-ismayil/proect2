@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ... существующий код ...
+
+// Функция для удаления строки из localStorage
+function removeItem(key) {
+    localStorage.removeItem(key);
+}
+
+// Функция для добавления новой строки в localStorage
+function addItem(key, value) {
+    localStorage.setItem(key, value);
+}
+
+// Создание кнопки для удаления строки
+const deleteButton = document.createElement('button');
+deleteButton.textContent = 'Удалить строку';
+deleteButton.onclick = function() {
+    const keyToRemove = prompt('Введите ключ для удаления:');
+    removeItem(keyToRemove);
+};
+
+// Создание кнопки для добавления строки
+const addButton = document.createElement('button');
+addButton.textContent = 'Добавить строку';
+addButton.onclick = function() {
+    const keyToAdd = prompt('Введите ключ для добавления:');
+    const valueToAdd = prompt('Введите значение для добавления:');
+    addItem(keyToAdd, valueToAdd);
+};
+
+// Добавление кнопок на страницу
+document.body.appendChild(deleteButton);
+document.body.appendChild(addButton);
+
+// ... существующий код ...
+
+    </script>
+</body>
+</html>

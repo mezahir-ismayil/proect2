@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+ display: flex;
+    margin: 0;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 10%;
+}
+
+.sidebar {
+    width: 200px;
+    background: #f4f4f4;
+    padding: 15px;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.sidebar button:hover {
+    background: #0056b3;
+    
+}
+
+.display  {
+    flex-grow: 1;
+    padding: 15px;
+    display: flex;
+}
+
+.computer {
+    margin: 20px 0;
+    
+}
+
+.item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+   
+}
+
+.mix {
+    width: 250px;
+    height: 300px;
+    
+}

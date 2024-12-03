@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в аккаунт</title>
+</head>
+<body>
+    <h1>Вход в аккаунт</h1>
+    <form id="loginForm">
+        <label for="usernam">Имя:</label>
+        <input type="text" id="usernam" required>
+        <button type="submit">Войти</button>
+    </form>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Предотвращаем отправку формы
+            const username = document.getElementById('usernam').value;
+            // Сохраняем имя пользователя в localStorage
+            localStorage.setItem('usernam', username);
+            // Перенаправляем на страницу приветствия
+            window.location.href = 'welcome.html';
+        });
+    </script>
+</body>
+</html>

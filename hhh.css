@@ -1,0 +1,52 @@
+.btn9{
+    width:110px ;
+    height:39px ;
+    border-radius:5px ;
+    background-color: rgb(255, 106, 0);
+    }
+    .bt{
+     width:110px ;
+    height:39px ;
+    border-radius:5px ;
+    background-color: rgb(0, 17, 255);
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+    }
+    
+    .modal {
+        display: none; /* Скрыть модальное окно по умолчанию */
+        position: fixed; /* Остаётся на месте */
+        z-index: 1; /* Случай над другими элементами */
+        left: 0;
+        top: 0;
+        width: 100%; /* Ширина 100% */
+        height: 100%; /* Высота 100% */
+        overflow: auto; /* Включить прокрутку, если необходимо */
+        background-color: rgba(0, 0, 0, 0.4); /* Чёрный фон с прозрачностью */
+    }
+    
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% от верха и по центру */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Ширина 80% */
+    }
+    
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        column-span:none
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
