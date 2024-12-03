@@ -67,6 +67,7 @@
         if (username === storedUsername && password === storedPassword) {
             alert('Вход успешен!');
             window.location.href = 'dsdw.html'; // Здесь можно перенаправить на другую страницу
+            
         } else {
             alert('Неверное имя пользователя или пароль.');
         }
@@ -78,8 +79,7 @@
             const username = document.getElementById('loginUsername').value;
             // Сохраняем имя пользователя в localStorage
             localStorage.setItem('loginUsername', username);
-            // Перенаправляем на страницу приветствия
-            window.location.href = 'dsdw.html';
+           
         });
 
 
