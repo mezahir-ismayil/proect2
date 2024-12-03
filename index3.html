@@ -170,16 +170,6 @@ function aaa() {
 }
 
 
-document.getElementById('addCompute').onclick = function() {
-    const computerName = document.getElementById('computerName').value;
-    if (computerName) {
-        let computers = JSON.parse(localStorage.getItem('computers')) || [];
-        computers.push(computerName);
-        localStorage.setItem('computers', JSON.stringify(computers));
-        document.getElementById('modal').style.display = "none";
-        document.getElementById('computerName').value = '';
-    }
-}
 
        
     </script>

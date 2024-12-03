@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница 2</title>
+</head>
+<body>
+    <h1>Добавленный контент</h1>
+    <div id="content"></div>
+
+    <script>
+        const text = localStorage.getItem('text');
+        const imageUrl = localStorage.getItem('imageUrl');
+        const contentDiv = document.getElementById('content');
+
+        if (text) {
+            contentDiv.innerHTML += `<p>${text}</p>`;
+        }
+        if (imageUrl) {
+            contentDiv.innerHTML += `<img src="${imageUrl}" alt="Картинка" style="max-width: 100%;">`;
+        }
+    </script>
+</body>
+</html>
