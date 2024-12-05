@@ -84,3 +84,21 @@ function aaa() {
 
 
 // ... existing code ...
+  // Открытие модального окна
+  document.getElementById('openModal').onclick = function() {
+    document.getElementById('myModal').style.display = "block";
+}
+
+// Закрытие модального окна при клике вне его
+window.onclick = function(event) {
+    if (event.target == document.getElementById('myModal')) {
+        document.getElementById('myModal').style.display = "none";
+    }
+    if (!computerName || !computerId || !computerImage || !computerPrice) {
+        alert("Заполните все поля!");
+        return;
+    }
+
+}
+
+

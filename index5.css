@@ -1,14 +1,14 @@
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
     margin: 0;
     padding: 0;
     background-color: #ffffff;
 }
 .container {
     display: flex;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 #search-container {
     display: flex;
@@ -82,10 +82,14 @@ body {
     background-color: #74b9ff;
 }
 .btt{
-    width:130px ;
+    width:150px ;
+    padding: 10px;
     height: 50px;
    border-radius:5px ;
     background-color: #ffe600;
    
 
+}
+.hp1 {
+ display: block;
 }
