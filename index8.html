@@ -3,23 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Страница 2</title>
+    <title>Форма ввода</title>
 </head>
 <body>
-    <h1>Добавленный контент</h1>
-    <div id="content"></div>
+    <h1>Введите данные о компьютере</h1>
+    <form id="computerForm">
+        <label for="description">Описание компьютера:</label><br>
+        <input type="text" id="description" required><br><br>
+        <label for="imageLink">Ссылка на изображение:</label><br>
+        <input type="text" id="imageLink" required><br><br>
+        <button type="submit">Отправить</button>
+    </form>
 
     <script>
-        const text = localStorage.getItem('text');
-        const imageUrl = localStorage.getItem('imageUrl');
-        const contentDiv = document.getElementById('content');
-
-        if (text) {
-            contentDiv.innerHTML += `<p>${text}</p>`;
-        }
-        if (imageUrl) {
-            contentDiv.innerHTML += `<img src="${imageUrl}" alt="Картинка" style="max-width: 100%;">`;
-        }
+        document.getElementById('computerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const description = document.getElementById('description').value;
+            const imageLink = document.getElementById('imageLink').value;
+            // Сохраняем данные в Local Storage
+            localStorage.setItem('computerDescription', description);
+            localStorage.setItem('computerImageLink', imageLink);
+            // Перенаправляем на вторую страницу
+            window.location.href = 'index9.html';
+        });
     </script>
 </body>
 </html>

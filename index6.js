@@ -1,4 +1,4 @@
-// Данные пользователей
+     // Данные пользователей
 const users = [
     { username: "admin", password: "12345" },
     { username: "user1", password: "password" }
@@ -39,9 +39,12 @@ document.getElementById("createAccount")?.addEventListener("click", function () 
             { username: "user2", password: "pass2" }
         ];
 
+        function startShopping() {
+            window.location.href = "index3.html";
+        }
 
         function goToLogin() {
-            window.location.href = "index2.html";
+            window.location.href = "index.html";
         }
 
         function handleLoginSuccess() {
@@ -65,8 +68,10 @@ document.getElementById("createAccount")?.addEventListener("click", function () 
             handleLoginSuccess();
         }
 
-        
-        
         function df() {
-            window.location.href = "index1000.html";
+            window.location.href = "index7.html";
         }
+   // Получаем имя пользователя из localStorage
+   const username = localStorage.getItem('loginUsername');
+        // Отображаем приветствие
+        document.getElementById('greeting').textContent = `İstifadəçi adi: ${username}`;

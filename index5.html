@@ -3,34 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кнопки и Divы</title>
-    <style>
-        .hidden {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="index5.css">
+    <title>Поиск компьютеров</title>
+   
 </head>
 <body>
+    <button class="btt" onclick="startShopping()">əsəs səyfə</button>
 
-    <button onclick="showDivs(1)">Кнопка 1</button>
-    <button onclick="showDivs(2)">Кнопка 2</button>
-    <button onclick="showDivs(3)">Кнопка 3</button>
+    <div class="container">
+        <div id="search-container">
+            <input type="text" id="search" placeholder="Поиск...">
+            <div id="computerList" class="brand" onclick="showComputers('HP')">HP</div>
+            <div class="brand" onclick="showComputers('Lenovo')">Lenovo</div>
+            <div class="brand" onclick="showComputers('Acer')">Acer</div>
+            <div class="brand" onclick="showComputers('Sony')">Sony</div>
+            <div class="brand" onclick="showComputers('Asus')">Asus</div>
+            <div class="brand" onclick="showComputers('Dell')">Dell</div>
+            <div class="brand" onclick="showComputers('Macbook')">Macbook</div>
+            
+        </div>
+        <div class="st" id="computers-list">
+            <!-- Here will appear the computers -->
+        </div>
+    </div>
 
-    <div id="div1" class="hidden">Содержимое Div 1</div>
-    <div id="div2" class="hidden">Содержимое Div 2</div>
-    <div id="div3" class="hidden">Содержимое Div 3</div>
+    <div id="computer-details" class="computer-details">
+        <!-- Computer details will be shown here -->
+    </div>
+        <div id="computers-list">
+        </div>
+    </div>
 
-    <script>
-        function showDivs(buttonNumber) {
-            // Скрываем все div
-            document.getElementById('div1').classList.add('hidden');
-            document.getElementById('div2').classList.add('hidden');
-            document.getElementById('div3').classList.add('hidden');
-
-            // Показываем соответствующий div
-            document.getElementById('div' + buttonNumber).classList.remove('hidden');
-        }
-    </script>
-
+    <script src="index5.js"> </script>
 </body>
 </html>

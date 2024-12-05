@@ -3,44 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index2.css">
     <title>Вход</title>
-    <style>
-        /* Стили для формы */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .form-container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-        input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #0056b3;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #003f7d;
-        }
-    </style>
 </head>
 <body>
 
@@ -51,39 +15,9 @@
         <input type="password" id="loginPassword" placeholder="Пароль" required>
         <button type="submit">Войти</button>
     </form>
-    <p>Нет аккаунта? <a href="login.html">Зарегистрироваться</a></p>
+    <p>Нет аккаунта? <a href="index4.html">Зарегистрироваться</a></p>
 </div>
-
-<script>
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const username = document.getElementById('loginUsername').value;
-        const password = document.getElementById('loginPassword').value;
-
-        // Проверка данных
-        const storedUsername = localStorage.getItem('username');
-        const storedPassword = localStorage.getItem('password');
-
-        if (username === storedUsername && password === storedPassword) {
-            alert('Вход успешен!');
-            window.location.href = 'dsdw.html'; // Здесь можно перенаправить на другую страницу
-            
-        } else {
-            alert('Неверное имя пользователя или пароль.');
-        }
-    });
-
-
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Предотвращаем отправку формы
-            const username = document.getElementById('loginUsername').value;
-            // Сохраняем имя пользователя в localStorage
-            localStorage.setItem('loginUsername', username);
-           
-        });
-
-
-</script>
+<script src="index2.js"></script>
 
 </body>
 </html>
