@@ -24,3 +24,5 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         localStorage.setItem('loginUsername', username);
        
     });
+
+    // localStorage.clear();

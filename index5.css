@@ -37,12 +37,12 @@ body {
 #computers-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 .computer {
     background-color: white;
     width: 200px;
-    height: 200px;
+    height: 290px;
     padding: 10px;
     margin: 10px;
     text-align: center;
@@ -57,19 +57,40 @@ body {
 }
 .computer-details {
     display: none;
-    position: absolute;
+    margin: 10% auto;
     background-color: #fff;
     border: 2px solid #ccc;
     padding: 20px;
-    width: 250px;
-    height: 300px;
+    width: 40%;
+    text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
     z-index: 10;
+}
+    
+.st {
+    height: 91vh;
+    overflow: hidden;
+}
+
+.all {
+    background-color: rgba(24, 24, 24, 0.4);
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     
 }
-.computer-details.open {
+
+body {
+    z-index: 0;
+}
+.open {
     display: block;
+
+
 }
 .computer .details-btn {
     background-color: #0984e3;

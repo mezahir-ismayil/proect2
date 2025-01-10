@@ -14,47 +14,65 @@
         <table id="computers-table">
             <thead>
                 <tr>
-                    <th>Nomerə</th>
+                    <th>Nömrə</th>
                     <th>Ad</th>
                     <th>Şəkil</th>
                     <th>Qiymət</th>
-                    <th>Əmaliyyatlar</th>
+                    <th>Əməliyyatlar</th>
                 </tr>
             </thead>
             <tbody></tbody>
         </table>
 
         <div id="myModal" class="modal">
+            <h1>Yeni</h1> 
             <div class="modal-content">
-                
                 <div class="form-section">
-                    <label for="input1">adı</label><br>
-                    <input type="text" id="computerName"><br>
-                    <label for="input2">Nomerə:</label><br>
+                    <label for="input1">Kateqoriya:</label><br>
+                    <!-- <input type="text" id="computerName"><br> -->
+                    <select name="" id="computerName">
+                        <option value="Acer">Acer</option>
+                        <option value="HP">HP</option>
+                        <option value="Asus">Asus</option>
+                        <option value="Dell">Dell</option>
+                        <option value="Lenovo">Lenovo</option>
+                        <option value="LG">LG</option>
+                        <option value="Casper">Casper</option>
+                        <option value="Fujitsu">Fujitsu</option>
+                        <option value="Nexus">Nexus</option>
+                        <option value="Samsung">Samsung</option>
+                        <option value="Toshiba">Toshiba</option>
+                        <option value="Sony">Sony</option>
+                    </select> <br>
+                    <label for="input2">Nömrə:</label><br>
                     <input type="number" id="computerId"><br>
-                    <label for="input3">Şəkil (URL):</label>
+                    <label for="input3">Şəkil (URL):</label><br>
                     <input type="text" id="computerImage"><br>
                     <label for="input4">Qiymət:</label><br>
                     <input type="text" id="computerPrice"><br>
                     <label for="input5">Təsvir:</label><br>
                     <input type="text" id="input5"><br>
                     <label for="input6">Yeni:</label><br>
-                    <input type="text" id="input6"><br>
+                    <!-- <input type="text" id="input6"><br> -->
+                     <select name="" id="input6">
+                        <option value="Bəli">Bəli</option>
+                        <option value="Xeyr">Xeyr</option>
+                     </select> <br>
                     <button class="sss" id="addComputer">Əlavə et</button>
                 </div>
               
                 <div class="form-section">
-                    <label for="input7">Əməli yaddaş (GB):</label>
-                    <input type="text" id="input7"><br>
-                    <label for="input8">Mərkəzi prosesor:</label>
+                    <label for="input7">Əməli yaddaş (GB):</label><br>
+                    <input type="number" id="input7"><br>
+                    <label for="input8">Mərkəzi prosesor:</label><br>
                     <input type="text" id="input8"><br>
-                    <label for="input9">Daimi yaddaş (GB):</label>
+                    <label for="input9">Daimi yaddaş (GB):</label><br>
                     <input type="text" id="input9"><br>
-                    <label for="input10">Daimi yaddaş  tipi:</label>
+                    <label for="input10">Daimi yaddaş  tipi:</label><br>
                     <input type="text" id="input10"><br>
-                    <label for="input11">Əmaliyyat sistemi:</label>
+                    <label for="input11">Əmaliyyat sistemi:</label><br>
                     <input type="text" id="input11"><br>
-                    <label for="input12">Video kart (GB):</label>
+                    <label for="input12">Video kart (GB):</label><br>
                     <input type="text" id="input12"><br>
                 </div>
                 <span id="closeModal" class="close">&times;</span>

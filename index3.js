@@ -23,6 +23,7 @@ addComputerButton.onclick = function() {
     const computerId = document.getElementById("computerId").value;
     const computerImage = document.getElementById("computerImage").value;
     const computerPrice = document.getElementById("computerPrice").value;
+    const input8 = document.getElementById("input8").value;
 
     // Проверка на пустые поля (можно добавить более строгую валидацию)
     if (!computerName || !computerId || !computerImage || !computerPrice) {
@@ -31,7 +32,7 @@ addComputerButton.onclick = function() {
     }
 
     let computers = JSON.parse(localStorage.getItem("computers")) || [];
-    computers.push({id: computerId, name: computerName, image: computerImage, price: computerPrice});
+    computers.push({id: computerId, name: computerName, image: computerImage, price: computerPrice, xs: input8});
     localStorage.setItem("computers", JSON.stringify(computers));
     updateTable();
     modal.style.display = "none";

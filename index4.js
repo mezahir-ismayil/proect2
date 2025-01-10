@@ -9,3 +9,5 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     alert('Регистрация успешна!');
     window.location.href = 'index2.html'; // Перенаправление на страницу входа
 });
+
+// localStorage.clear();
